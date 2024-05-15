@@ -35,7 +35,9 @@ function disconnectConnection(connectionId) {
         // @TODO: room에 user가 나갔음을 전달한다. 방에 한 명도 안 남으면 room을 닫는다.
       }
 
-      delete users[user_no];
+      console.log(`user#${connection.user_no} bye`);
+
+      delete users[connection.user_no];
     }
 
     delete connections[connectionId];
@@ -94,6 +96,8 @@ server.on("connection", function connection(client) {
             users[userMeta.user_no] = {
               user_no: userMeta.user_no,
             };
+            console.log(`user#${userMeta.user_no} hi`);
+
             // connection에도 연결
             connection.user_no = userMeta.user_no;
 

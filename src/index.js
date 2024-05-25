@@ -16,8 +16,8 @@ const PACKET_MESSAGE_DIVIDER = "\u001d";
 const isProduction = process.env.NODE_ENV === "production";
 
 const httpsServer = createServer({
-  cert: fs.readFileSync("./certificate/fullchain.pem", "utf8"),
-  key: fs.readFileSync("./certificate/privkey.pem", "utf8"),
+  cert: fs.readFileSync("../certificate/fullchain.pem", "utf8"),
+  key: fs.readFileSync("../certificate/privkey.pem", "utf8"),
 });
 const server = isProduction
   ? new WebSocketServer({ server: httpsServer })

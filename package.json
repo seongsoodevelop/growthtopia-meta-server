@@ -21,6 +21,8 @@
   "dependencies": {
     "cross-env": "^7.0.3",
     "dotenv": "^16.4.5",
+    "fs": "^0.0.1-security",
+    "https": "^1.0.0",
     "jsonwebtoken": "^9.0.2",
     "moment": "^2.30.1",
     "mysql": "^2.18.1",

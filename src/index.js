@@ -22,7 +22,13 @@ const httpsServer = createServer({
 const server = isProduction
   ? new WebSocketServer({ server: httpsServer })
   : new WebSocketServer({ port: process.env.PORT });
+
 console.log(`WEBSOCKET Listening on port ${process.env.PORT}`);
+
+if (isProduction) {
+  httpsServer.listen(process.env.PORT);
+  console.log(`HTTPS Listening on port ${process.env.PORT}`);
+}
 
 //
 let nextConnectionId = 0;
